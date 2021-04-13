@@ -1,4 +1,4 @@
-.card, .btn, .form-control { border-radius: 0 !important; } /* Removes rounding effect from buttons, cards, and inputs */
+.card, .btn, .btn-lg, .form-control { border-radius: 0 !important; } /* Removes rounding effect from buttons, cards, and inputs */
 
 body {
 	background-color: #fffef2;
@@ -9,10 +9,10 @@ body {
 }
 
 .pt-extra {
-	padding: 5rem !important;
+	padding-top: 5rem !important;
 }
 .pb-extra {
-	padding: 5rem !important;
+	padding-bottom: 5rem !important;
 }
 @media (min-width: 1200px){
   .display-5 {
@@ -48,29 +48,75 @@ body {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 }
+
+.content{
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
 /***************
 *    NAVBAR    *
 ***************/
 .navbar-theme .navbar-nav .nav-link { /* Change colour of the navbar */
   color: #BDA544;
   text-transform: uppercase;
-  font-size: 120%;
 }
+
+.custom-toggler.navbar-toggler {
+	border-color: rgb(189, 165, 68);
+} 
+
+.custom-toggler .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(189, 165, 68, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler:focus {
+	box-shadow: 0 0 0 0 !important;
+}
+
+@media (min-width: 768px) {
+	.navbar-expand-md .navbar-nav .nav-link {
+    	padding-right: .8rem;
+    	padding-left: .8rem;
+	}
+}
+
+.nav-link {
+	font-size: 120%;
+	transition: all .2s ease-in-out;
+	float: left;
+}
+
 .nav-link.active {
 	color: #AB953D !important;
 }
-.nav-link.hover{
-	color: #AAAAAA !important;
+
+.nav-link.active:hover {
+	color: #AB953D !important;
+	transform: scale(1.0);
 }
+
+.nav-link:hover{
+	color: #AAAAAA !important;
+	transform: scale(1.15);
+	float:left;
+}
+
 .bg-dark{
 	background-color: #686868 !important;
 }
 
 nav {
-	background: rgba(250,250,250,0.2) !important;
+	background: rgba(80, 57, 85,0.6);
 	box-shadow: 0px 2px 10px 0px rgb(0 0 0 / 50%);
 	position: fixed !important;
 	width: 100%;
+	transition: 0.5s;
+}
+
+nav:hover {
+	background: rgba(80, 57, 85,0.9);
 }
 
 .navbar-brand {
@@ -80,17 +126,38 @@ nav {
 }
 
 .navbar-logo img{
-	height: 60px;
+	height: 5em;
+	position: absolute;
+	top: 0;
+}
+
+.nav-item {
+	font-weight: 400 !important;
+}
+
+.navbar {
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
+	height: 3.8em;
 }
 
 /********************
 *    PAGE HEADER    *
 ********************/
 .page-header {
-	background-color: #503955;
+	background: url(assets/img/banner.png);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	margin-bottom: 3%;
 	padding: 5%;
 	padding-top: 100px;
+	width: 100%;
+}
+
+.index-header {
+	padding-bottom: 200px;
 }
 
 .page-header-intro, .page-header-info {
@@ -100,12 +167,6 @@ nav {
 /******************
 *    PORTFOLIO    *
 ******************/
-.content{
-	padding-left: 0px;
-	padding-right: 0px;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 @media (min-width: 1700px) {
 	.container-xl {
@@ -113,16 +174,16 @@ nav {
 	}
 }
 
-.portfolio-piece img{
+.portfolio .portfolio-piece img{
 	width: 100%;
 	overflow: hidden;
 }
 
-.portfolio-piece .image:hover{
+.portfolio .portfolio-piece .image:hover{
 	background:rgba(0,0,0,0.1);
 }
 
-.portfolio-piece .image-overlay {
+.portfolio .portfolio-piece .image-overlay {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -135,22 +196,22 @@ nav {
 	background-color: #503955;
   }
 
-.portfolio-piece:hover .image-overlay{
+.portfolio .portfolio-piece:hover .image-overlay{
 	opacity: 0.7;
 }
 
-.portfolio-piece {
+.portfolio .portfolio-piece {
 	position: relative;
 	background:rgba(0,0,0,0.1);
 }
 
-.portfolio-piece:hover{
+.portfolio .portfolio-piece:hover{
 	transform: translateY(0);
 	transition: 0.5s;
 	background:rgba(0,0,0,0);
 }
 
-.portfolio-piece .details{
+.portfolio .portfolio-piece .details{
     position: absolute;
     text-align: center;
     width: 100%;
@@ -247,6 +308,113 @@ nav {
 	float: left;
 }
 
+/**************
+*    ENTRY    *
+**************/
+.entry h2 {
+	text-align: center;
+	margin: auto;
+	margin-bottom: 5%;
+	color: #503955;
+}
+
+@media (min-width: 800px) {
+	.entry h2 {
+		width: 80%;
+	}
+}
+
+@media (min-width: 1000px) {
+	.entry h2 {
+		width: 70%;
+	}
+}
+
+@media (min-width: 1400px) {
+	.entry h2 {
+		width: 60%;
+	}
+}
+
+.entry .images .col-4, .entry .images .col-12, .entry .images .col-sm-4, .entry .images .col-6 {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	float: left;
+}
+
+.entry img{
+	width: 100%;
+	overflow: hidden;
+}
+
+.entry .video {
+	position: relative;
+  	padding-bottom: 47%; /* 16:9 */
+  	height: 0;
+}
+
+.entry .video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.entry .info p {
+	text-align: right;
+}
+
+.entry .details p {
+	text-align: left;
+}
+
+.entry .sub-image {
+	transition: 0.5s;
+}
+
+.entry .sub-left:hover {
+	transform: translate(25%,-25%);
+	transition: 0.5s;
+}
+
+.entry .sub-middle:hover {
+	transform: translateY(-25%);
+	transition: 0.5s;
+}
+
+.entry .sub-right:hover {
+	transform: translate(-25%,-25%);
+	transition: 0.5s;
+}
+
+.entry .sub-image img {
+	transition: 0.5s;
+}
+
+.entry .sub-image img:hover{
+	transform: scale(1.5);
+	transition: 0.5s;
+}
+
+@media (max-width: 576px) {
+	.entry .sub-left:hover {
+		transform: translate(50%,-50%);
+	}
+	
+	.entry .sub-middle:hover {
+		transform: translate(-50%,-50%);
+	}
+
+	.entry .sub-image img:hover {
+		transform: scale(2);
+	}
+	
+	.entry .sub-right:hover, .entry .sub-right img:hover {
+		transform: none;
+	}
+}
+
 /*************
 *    SHOP    *
 *************/
@@ -293,12 +461,43 @@ nav {
 *    INDEX    *
 **************/
 .index h2 {
-	width: 50%;
 	text-align: center;
-	margin: auto;
-	margin-bottom: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1%;
 	color: #503955;
 }
+
+@media (min-width: 800px) {
+	.index h2 {
+		width: 80%;
+	}
+}
+
+@media (min-width: 1000px) {
+	.index h2 {
+		width: 70%;
+	}
+}
+
+@media (min-width: 1400px) {
+	.index h2 {
+		width: 60%;
+	}
+}
+
+.index h2 .row{
+	text-align: center;
+}
+
+/* .index img.intro {
+	width: 25%;
+	height: auto;
+	padding: 0 0 0 0;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+} */
 
 .index h3{
 	margin: auto;
@@ -324,7 +523,11 @@ nav {
 
 .contact-form {
 	margin: auto;
-	background-color: #c7c7c6;
+	background: url(assets/img/banner.png);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
 	padding: 3em;
 	width: 90%;
 }

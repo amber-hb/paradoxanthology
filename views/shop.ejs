@@ -13,14 +13,18 @@
   <!-- Bootstrap CSS followed by custom CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- Being used when on AWS serving. Throws error on localhost which can be ignored -->
   <link rel="stylesheet" href="../public/stylesheet.css" type="text/css">
+  <!-- Being used when on localhost. Throws error on AWS which can be ignored -->
   <link rel="stylesheet" href="/stylesheet.css" type="text/css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script src="https://checkout.stripe.com/checkout.js" defer></script>
   <script>
     var stripePublicKey = '<%= stripePublicKey %>'
   </script>
+  <!-- Being used when on AWS serving. Throws error on localhost which can be ignored -->
   <script type="text/javascript" src="../public/js/shopScript.js" defer></script>
+  <!-- Being used when on localhost. Throws error on AWS which can be ignored -->
   <script type="text/javascript" src="js/shopScript.js" defer></script>
 </head>
 
@@ -41,14 +45,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+          <li class="nav-item display-7">
             <a class="nav-link" href="index.html">About Me</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item display-7">
             <a class="nav-link" href="work.html">My Work</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="shop" href="shop.ejs">Shop</a>
+          <li class="nav-item display-7">
+            <a class="nav-link active" aria-current="shop" href="shop">Shop</a>
           </li>
         </ul>
       </div>
@@ -56,90 +60,94 @@
   </nav>
 
   <header class="page-header">
-    <h1 class="display-4 px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center page-header-intro">Commision Shop</h1>
+    <h1 class="display-4 px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center page-header-intro">Commisions & Merch</h1>
     <div class="page-header-info px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <p class="lead">Purchase a commision piece from me. For support or queries please contact me before purchasing.
+      <p class="lead display-6">Purchase a commision piece from me. For support or queries please contact me before purchasing.
         Refunds are at personal discretion.</p>
     </div>
   </header>
 
 
   <main class="content container-xl">
+    <h2 class="display-4 text-center pb-5">Commisions</h2>
     <div class="row row-cols-2 row-cols-md-3 mb-3 text-center products">
       <!-- The items.json file is used to manage items available in the store. It assigns values from an array database -->
       <!-- The code here is for styling and implements data from the above mentioned file -->
       <% items.commisions.forEach(function(item) { %>
-        <div class="col">
-          <!-- Change shop-item -->
-          <div class="card mb-4 shadow-sm shop-item" data-item-id="<%= item.id %>">
-            <div class="card-header">
-              <!-- Change shop-item-title -->
-              <h4 class="shop-item-title display-6">
-                <%= item.name %>
-              </h4>
-            </div>
-            <div class="card-body shop-hover-effect">
-              <!-- Change shop-item-price -->
-              <h1 class="card-title pricing-card-title shop-item-price display-4">&euro;<%= item.price / 100 %>
-              </h1>
-              <ul class="list-unstyled mt-3 mb-4 display-6">
-                <li>
-                  <%= item.desc1 %>
-                </li>
-                <li>
-                  <%= item.desc2 %>
-                </li>
-                <li>
-                  <%= item.desc3 %>
-                </li>
-              </ul>
-              <!-- Change shop-item-button -->
-              <button type="submit" class="w-100 btn btn-lg btn-gold shop-item-button display-6">Add To Cart</button>
-            </div>
+      <div class="col">
+        <!-- Change shop-item -->
+        <div class="card mb-4 shadow-sm shop-item" data-item-id="<%= item.id %>">
+          <div class="card-header">
+            <!-- Change shop-item-title -->
+            <h4 class="shop-item-title display-6">
+              <%= item.name %>
+            </h4>
+          </div>
+          <div class="card-body shop-hover-effect">
+            <!-- Change shop-item-price -->
+            <h1 class="card-title pricing-card-title shop-item-price display-4">&euro;<%= item.price / 100 %>
+            </h1>
+            <ul class="list-unstyled mt-3 mb-4 display-6">
+              <li>
+                <%= item.desc1 %>
+              </li>
+              <li>
+                <%= item.desc2 %>
+              </li>
+              <li>
+                <%= item.desc3 %>
+              </li>
+            </ul>
+            <!-- Change shop-item-button -->
+            <button type="submit" class="w-100 btn btn-lg btn-gold shop-item-button display-6">Add To Cart</button>
           </div>
         </div>
-        <% }) %>
-
-          <% items.merch.forEach(function(item) { %>
-            <div class="col">
-              <!-- Change shop-item -->
-              <div class="card mb-4 shadow-sm shop-item" data-item-id="<%= item.id %>">
-                <div class="card-header">
-                  <!-- Change shop-item-title -->
-                  <h4 class=" shop-item-title display-6">
-                    <%= item.name %>
-                  </h4>
-                </div>
-                <div class="card-body shop-hover-effect">
-                  <!-- Change shop-item-price -->
-                  <h1 class="card-title pricing-card-title shop-item-price display-4">&euro;<%= item.price / 100 %>
-                  </h1>
-                  <ul class="list-unstyled mt-3 mb-4 display-6">
-                    <li>
-                      <%= item.desc1 %>
-                    </li>
-                    <li>
-                      <%= item.desc2 %>
-                    </li>
-                    <li>
-                      <%= item.desc3 %>
-                    </li>
-                  </ul>
-                  <!-- Change shop-item-button -->
-                  <button type="submit" class="w-100 btn btn-lg btn-gold shop-item-button display-6">Add To
-                    Cart</button>
-                </div>
-              </div>
-            </div>
-            <% }) %>
+      </div>
+      <% }) %>
+    </div>
+    <h2 class="display-4 text-center pb-5">Merch</h2>
+    <div class="row row-cols-2 row-cols-md-3 mb-3 text-center products">
+      <% items.merch.forEach(function(item) { %>
+      <div class="col">
+        <!-- Change shop-item -->
+        <div class="card mb-4 shadow-sm shop-item" data-item-id="<%= item.id %>">
+          <div class="card-header">
+            <!-- Change shop-item-title -->
+            <h4 class=" shop-item-title display-6">
+              <%= item.name %>
+            </h4>
+          </div>
+          <div class="card-body shop-hover-effect">
+            <!-- Change shop-item-price -->
+            <h1 class="card-title pricing-card-title shop-item-price display-4">&euro;<%= item.price / 100 %>
+            </h1>
+            <ul class="list-unstyled mt-3 mb-4 display-6">
+              <li>
+                <%= item.desc1 %>
+              </li>
+              <li>
+                <%= item.desc2 %>
+              </li>
+              <li>
+                <%= item.desc3 %>
+              </li>
+            </ul>
+            <!-- Change shop-item-button -->
+            <button type="submit" class="w-100 btn btn-lg btn-gold shop-item-button display-6">Add To
+              Cart</button>
+          </div>
+        </div>
+      </div>
+      <% }) %>
     </div>
 
+    <h2 class="display-4 text-center pb-5">Cart</h2>
     <section class="shop-cart text-center card shadow-sm">
       <!-- <h2 class="section-header">CART</h2> -->
       <div class="cart-row row row-no-ml row-no-mr card-header">
-        <h4 class="cart-item col-md-4 display-5">Item</h4>
-        <h4 class="cart-price col-md-4 display-5">Price</h4>
-        <h4 class="cart-quantity col-md-4 display-5">Quantity</h4>
+        <h4 class="cart-item col-md-4 display-6">Item</h4>
+        <h4 class="cart-price col-md-4 display-6">Price</h4>
+        <h4 class="cart-quantity col-md-4 display-6">Quantity</h4>
       </div>
       <div class="card-body shop-hover-effect">
         <!-- Change cart-items. Items added to cart on page will go in here -->
@@ -147,12 +155,12 @@
           <!-- To change how items will be styled: shopScripts.js -inside- function addItemToCart -->
         </div>
         <div class="cart-total row ">
-          <p class="cart-total-title col-md-4 display-5">Total</p>
+          <p class="cart-total-title col-md-4 display-6">Total</p>
           <!-- Change cart-total-price -->
-          <p class="cart-total-price col-md-4 display-5">€0.00</p>
+          <p class="cart-total-price col-md-4 display-6">€0.00</p>
         </div>
         <div class="row justify-content-md-center">
-          <button class="col-md-4 btn-lg btn-purchase btn-gold display-6" type="button">Purchase</button>
+          <button class="col-md-4 btn btn-lg btn-purchase btn-gold display-6" type="button">Purchase</button>
         </div>
       </div>
     </section>
@@ -166,7 +174,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

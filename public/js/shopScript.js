@@ -132,7 +132,7 @@ function addItemToCart(title, price, id) {
         </div>
         <p class="cart-price col-md-4">${price}</p>
         <div class="cart-quantity col-md-4 pb-3">
-            <input class="cart-quantity-input shop-item-quantity col-md-7 h-100" type="number" value="1">
+            <input class="cart-quantity-input shop-item-quantity col-md-7 h-100 display-7" type="number" value="1">
             <button class="btn btn-danger col-md-auto display-7 h-100" type="button">Remove</button>
         </div>
         <hr>`

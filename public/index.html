@@ -28,20 +28,20 @@
         </div>
       </a>
       <!-- Button is viewed in navbar collapsed view when page size is reduced -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <!-- Div contains content that will be collapsed -->
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+        <ul class="navbar-nav ms-auto mb-lg-0">
+          <li class="nav-item display-7">
             <a class="nav-link active" aria-current="index" href="index.html">About Me</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item display-7">
             <a class="nav-link" href="work.html">My Work</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item display-7">
             <a class="nav-link" href="shop">Shop</a>
           </li>
         </ul>
@@ -49,44 +49,61 @@
     </div> <!-- Close container for navbar-->
   </nav>
 
-  <header class="page-header">
+  <header class="page-header index-header">
     <h1 class="display-4 px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center page-header-intro">Paradox Anthology</h1>
     <div class="page-header-info px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <p class="lead">Welcome to my portfolio</p>
+      <p class="lead display-6">Welcome to Paradox Anthology. My personal portfolio.</p>
     </div>
   </header>
 
   <main class="content container-xl index">
-    <h2 class="pt-extra pb-extra display-5">Hi my name is Nathan, a current student with a passion for digital media. I'm
-      currently living in Ireland studying and building a foundation for my career.</h2>
+    <div class="container-xs pb-extra pt-extra">
+      <h2 class="display-4">Who Am I?</h2>
+      <h2 class="display-5">Hi my name is Nathan, a current student and freelance graphic & front-end designer.
+        I'm currently living in Ireland studying and building a foundation for my career.
+      </h2>
+      <h2 class="display-5 pt-extra">What is Paradox Anthology?</h2>
+      <div class="row display-6 text-center"><p>Paradox Anthology is the name given to my portfolio, a self branding
+          to showcase my previous
+          work in:</p></div>
+      <div class="row display-6 text-center justify-content-center">
+        <div class="col-sm-4 col-6"><p>- Audio Video Animation -</p></div>
+        <div class="col-sm-4 col-6"><p>- Graphic Design -</p></div>
+      </div>
+      <div class="row display-6 text-center justify-content-center">
+        <div class="col-sm-4 col-6"><p>- 3D Modelling -</p></div>
+        <div class="col-sm-4 col-6"><p>- Web & Mobile Design & Development -</p></div>
+      </div>
+      <!-- <img class="intro pt-extra" src="assets/video/LogoAnimation.gif" alt="Paradox Anthology" name="Paradox Anthology logo"> -->
+    </div>
 
     <form class="contact-form needs-validation" novalidate action="mailto:g00375584@gmit.ie" method="post">
       <h3 class="display-4">Contact Me</h3>
       <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label for="firstNameValidatin">First Name</label>
-          <input type="text" class="form-control" id="firstNameValidatin" placeholder="Please enter first name.."
-            required>
+        <div class="col-md-4 col-sm-6 col-12 mb-3">
+          <label class="display-6" for="firstNameValidatin">First Name</label>
+          <input type="text" class="form-control display-7" id="firstNameValidatin"
+            placeholder="Please enter first name.." required>
           <div class="valid-feedback">
             Thank you!
           </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <label for="lastNameValidation">Last Name</label>
-          <input type="text" class="form-control" id="lastNameValidation" placeholder="Please enter last name.."
-            required>
+        <div class="col-md-4 col-sm-6 col-12 mb-3">
+          <label class="display-6" for="lastNameValidation">Last Name</label>
+          <input type="text" class="form-control display-7" id="lastNameValidation"
+            placeholder="Please enter last name.." required>
           <div class="valid-feedback">
             Thank you!
           </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <label for="emailValidation">Email</label>
+        <div class="col-md-4 col-sm-12 col-12 mb-3">
+          <label class="display-6" for="emailValidation">Email</label>
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupPrepend">@</span>
+              <span class="input-group-text display-7" id="inputGroupPrepend">@</span>
             </div>
-            <input type="email" class="form-control" id="emailValidation" placeholder="Please enter email address.."
-              required>
+            <input type="email" class="form-control display-7" id="emailValidation"
+              placeholder="Please enter email address.." required>
             <div class="invalid-feedback">
               Please enter a valid email address
             </div>
@@ -94,21 +111,24 @@
         </div>
       </div>
       <div class="form-row">
-        <div class="col-md-8 mb-3">
-          <label for="messageValidation">Message</label>
-          <input type="text" class="form-control" id="messageValidation" placeholder="Please enter your message here.."
-            required>
+        <div class="col-md-8 col-sm-8 col-12 mb-3">
+          <label class="display-6" for="messageValidation">Message</label>
+          <input type="text" class="form-control display-7" id="messageValidation"
+            placeholder="Please enter your message here.." required>
           <div class="invalid-feedback">
             Please enter a message before submitting
           </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <label>Phone Number</label>
-          <input type="text" class="form-control" id="validationCustom04" placeholder="Please enter phone number..">
+        <div class="col-md-4 col-sm-4 col-12 mb-3">
+          <label class="display-6">Phone Number</label>
+          <input type="text" class="form-control display-7" id="phoneValidation"
+            placeholder="Please enter phone number..">
           <small id="phoneHelp" class="form-text text-muted">Phone number is not required</small>
         </div>
       </div>
-      <button class="btn btn-gold" type="submit">Submit form</button><br>
+      <div class="form-row justify-content-center">
+        <button class="btn btn-gold col-md-4 col-sm-6 col-8" type="submit">Submit form</button>
+      </div>
       <small id="disclaimer" class="form-text text-muted">Your information will not be shared.</small>
     </form>
 
