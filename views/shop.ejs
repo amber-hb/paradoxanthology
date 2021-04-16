@@ -13,18 +13,12 @@
   <!-- Bootstrap CSS followed by custom CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <!-- Being used when on AWS serving. Throws error on localhost which can be ignored -->
-  <link rel="stylesheet" href="../public/stylesheet.css" type="text/css">
-  <!-- Being used when on localhost. Throws error on AWS which can be ignored -->
-  <link rel="stylesheet" href="/stylesheet.css" type="text/css">
+  <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script src="https://checkout.stripe.com/checkout.js" defer></script>
   <script>
     var stripePublicKey = '<%= stripePublicKey %>'
   </script>
-  <!-- Being used when on AWS serving. Throws error on localhost which can be ignored -->
-  <script type="text/javascript" src="../public/js/shopScript.js" defer></script>
-  <!-- Being used when on localhost. Throws error on AWS which can be ignored -->
   <script type="text/javascript" src="js/shopScript.js" defer></script>
 </head>
 
@@ -33,23 +27,23 @@
   <nav class="navbar navbar-expand-md sticky-top navbar-light navbar-theme">
     <div class="container-lg">
       <!-- Branding is the logo and name of the website -->
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index">
         <div class="navbar-logo">
           <img src="assets/video/LogoAnimation.gif" alt="Paradox Anthology" name="Paradox Anthology logo">
         </div>
       </a>
       <!-- Button is viewed in navbar collapsed view when page size is reduced -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item display-7">
-            <a class="nav-link" href="index.html">About Me</a>
+            <a class="nav-link" href="index">About Me</a>
           </li>
           <li class="nav-item display-7">
-            <a class="nav-link" href="work.html">My Work</a>
+            <a class="nav-link" href="work">My Work</a>
           </li>
           <li class="nav-item display-7">
             <a class="nav-link active" aria-current="shop" href="shop">Shop</a>
