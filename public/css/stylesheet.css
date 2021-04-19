@@ -218,6 +218,12 @@ footer .logo {
 	width: 100%;
 }
 
+/* @media (max-width: 1200px) { 
+	.page-header {
+
+	}
+} */
+
 .index-header {
 	padding-bottom: 200px;
 }
@@ -603,7 +609,7 @@ footer .logo {
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	padding: 3em;
 	width: 90%;
 }
@@ -646,6 +652,9 @@ footer .logo {
 	color: white;
 }
 
+.contact-form .notice-text {
+	color: white;
+}
 
 footer {
 	margin: auto;

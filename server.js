@@ -144,7 +144,7 @@ app.post('/register', ifLoggedin,
             // INSERTING USER INTO DATABASE
             dbConnection.execute("INSERT INTO `users`(`name`,`email`,`password`) VALUES(?,?,?)",[user_name,user_email, hash_pass])
             .then(result => {
-                res.send(`Your account has been created successfully, Now you can <a href="/">Login</a>`);
+                res.send(`Your account has been created successfully, you can now <a href="/">Login</a>`);
             }).catch(err => {
                 // THROW INSERTING USER ERROR'S
                 if (err) throw err;
