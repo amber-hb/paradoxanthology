@@ -97,6 +97,21 @@ app.get('/pieces/cityscape-animation', (req, res) => {
     }
 })
 
+app.get('/pieces/after-effects-blend', (req, res) => {
+    if(!req.session.isLoggedIn){
+        return res.redirect('/');
+    } else {
+        return res.render('pieces/after-effects-blend')
+    }
+})
+
+app.get('/pieces/mysql-php-dynamic', (req, res) => {
+    if(!req.session.isLoggedIn){
+        return res.redirect('/');
+    } else {
+        return res.render('pieces/mysql-php-dynamic')
+    }
+})
 
 
 // REGISTER PAGE
@@ -104,13 +119,16 @@ app.post('/register', ifLoggedin,
 // post data validation(using express-validator)
 [
     body('user_email','Invalid email address!').isEmail().custom((value) => {
-        return dbConnection.execute('SELECT `email` FROM `users` WHERE `email`=?', [value])
+        try {
+            return dbConnection.execute('SELECT `email` FROM `users` WHERE `email`=?', [value])
         .then(([rows]) => {
             if(rows.length > 0){
                 return Promise.reject('This E-mail already in use!');
             }
             return true;
-        });
+        })} catch (e) {
+            return Promise.reject('An error was caught. Please try again <a href="/">Login</a>');
+        };
     }),
     body('user_name','Username is Empty!').trim().not().isEmpty(),
     body('user_pass','The password must be of minimum length 6 characters').trim().isLength({ min: 6 }),
@@ -126,7 +144,7 @@ app.post('/register', ifLoggedin,
             // INSERTING USER INTO DATABASE
             dbConnection.execute("INSERT INTO `users`(`name`,`email`,`password`) VALUES(?,?,?)",[user_name,user_email, hash_pass])
             .then(result => {
-                res.send(`your account has been created successfully, Now you can <a href="/">Login</a>`);
+                res.send(`Your account has been created successfully, Now you can <a href="/">Login</a>`);
             }).catch(err => {
                 // THROW INSERTING USER ERROR'S
                 if (err) throw err;
