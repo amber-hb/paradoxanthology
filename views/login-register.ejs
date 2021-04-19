@@ -24,10 +24,8 @@
 
 <body>
   <header class="page-header">
+    <img class="logo" src="assets/video/LogoAnimation.gif" alt="Paradox Anthology" name="Paradox Anthology logo"><br>
     <h1 class="display-4 px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center page-header-intro"><a href="/" class="login-header">Login & Register</a></h1>
-    <div class="page-header-info px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <p class="lead display-6">Please login or register to see my website.</p>
-    </div>
   </header>
   <section class="login-register">
     <div class="container p-5">
@@ -45,15 +43,13 @@
               <input type="password" name="user_pass" id="_pass" class="form-control display-7" placeholder="Password"
                 required>
             </div>
-            <% if (locals.login_errors) { 
-                      login_errors.forEach(function(error_msg){ %>
+            <% if (locals.login_errors) { login_errors.forEach(function(error_msg){ %>
             <div class="alert alert-danger mt-3" role="alert"><%= error_msg %></div>
             <% });
                     } %>
             <div class="pt-4 form-row justify-content-center">
               <button type="submit" class="btn btn-gold col-12">Login</button>
             </div>
-          </form>
           </form>
         </div>
         <div class="col-sm-6 login-bg rounded border py-3 offset-sm-1">
@@ -74,12 +70,10 @@
               <input type="password" name="user_pass" id="_rpass" class="form-control display-7" placeholder="Password"
                 required>
             </div>
-            <% if (locals.register_error) { 
-                      register_error.forEach(function(error_msg){ %>
+            <% if (locals.register_error) { register_error.forEach(function(error_msg){ %>
             <div class="alert alert-danger mt-3" role="alert"><%= error_msg %></div>
-            <% });
-                    } %>
-            <div Fclass="pt-4 form-row justify-content-center">
+            <% }); } %>
+            <div class="pt-4 form-row justify-content-center">
               <button type="submit" class="btn btn-gold col-12">Sign Up</button>
             </div>
           </form>
@@ -89,10 +83,10 @@
     </div>
 
   </section>
-
   <!-- Used to clear floating elements from memory so elements after can size correctly -->
   <div style="clear: both;"></div>
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <img class="logo" src="assets/video/LogoAnimation.gif" alt="Paradox Anthology" name="Paradox Anthology logo"><br>
     &#169; Paradox Anthology 2021
   </footer>
   <!-- Boostrap scripts followed by custom scripts-->

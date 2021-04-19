@@ -152,6 +152,12 @@ nav:hover {
 	top: 0;
 }
 
+@media (max-width: 768px) { 
+	.navbar-logo img {
+		height: 3em;
+	}
+}
+
 .nav-item {
 	font-weight: 400 !important;
 }
@@ -163,6 +169,11 @@ nav:hover {
 .navbar {
 	padding-bottom: 0 !important;
 	padding-top: 0 !important;
+}
+
+
+footer .logo {
+	height: 10em;
 }
 
 /***********************
@@ -213,6 +224,12 @@ nav:hover {
 
 .page-header-intro, .page-header-info {
 	color: #BDA544;
+}
+
+.page-header .logo {
+	height: 10em;
+	display: block;
+	margin: auto;
 }
 
 /******************
