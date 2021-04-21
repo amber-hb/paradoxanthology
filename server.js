@@ -19,6 +19,7 @@ const cookieSession = require('cookie-session');
 const bcrypt = require('bcryptjs');
 const dbConnection = require('./database');
 const { body, validationResult } = require('express-validator');
+const nodeMailer = require('nodemailer');
 
 const app = express();
 app.use(express.urlencoded({extended:false}));
@@ -57,10 +58,14 @@ const ifLoggedin = (req,res,next) => {
 // ROOT PAGE
 app.get('/', ifNotLoggedin, (req,res,next) => {
     dbConnection.execute("SELECT `name` FROM `users` WHERE `id`=?",[req.session.userID])
+    // Old, was throwing error when trying to redirect to index instead of render
+    // .then(([rows]) => {
+    //     res.render('index',{
+    //         name:rows[0].name
+    //     });
+    // });
     .then(([rows]) => {
-        res.render('index',{
-            name:rows[0].name
-        });
+        res.redirect('/index');
     });
     
 });// END OF ROOT PAGE
@@ -239,8 +244,34 @@ app.get('/logout',(req,res)=>{
 });
 // END OF LOGOUT
 
+// Push Contact Form Data To Terminal/Console
+app.post('/index', (req, res) => {
+    console.log(req.body);
 
+    const transporter = nodeMailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL,
+            pass: process.env.PASS
+        }
+    })
+    const mailOptions = {
+        from: req.body.email,
+        to: process.env.EMAIL,
+        subject: `Message from ${req.body.email}: ${req.body.subject}`,
+        text: req.body.message
+    }
 
+    transporter.sendMail(mailOptions, (error, info) => {
+        if(error){
+            console.log(error);
+            res.send('error');
+        } else {
+            console.log('Email sent' + info.response);
+            res.send('success');
+        };
+    });
+});
 
 
 
