@@ -7,8 +7,6 @@ const stripePublicKey = process.env.STRIPE_PUBLIC_KEY
 
 const port = process.env.port || 3000
 
-console.log(stripeSecretKey, stripePublicKey)
-
 
 const fs = require('fs')
 const stripe = require('stripe')(stripeSecretKey)
