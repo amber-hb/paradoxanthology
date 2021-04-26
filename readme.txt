@@ -3,10 +3,9 @@ Stripe checkout system created with help from: https://www.youtube.com/channel/U
 - Items in the shop page MUST be edited, deleted, and added through the items.json file
 
 To run on localhost:
-
+Download Node JS
 Open CMD and type: npm install
 Then use cd to move to the folder container server.js
-Then in CMD type or terminal in an editor such as VS Code: node server.js
 In this folder type: npm install
 Then type: npm install --save express ejs express-validator cookie-session bcrypt mysql2
 Then type: npm install bcryptjs nodemailer
