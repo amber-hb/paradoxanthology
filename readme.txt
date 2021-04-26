@@ -14,3 +14,17 @@ Then in CMD, or a terminal in an editor such as VS Code, type: node server.js
 Have XAAMP installed and run Apache & MySql
 Create a database called: nodejs_login
 Import the database.sql file in to the nodejs_login database
+
+
+To have the shop and contact form working on localhost:
+You will need to create a .env in the root project folder which contains server.js
+The reason for this is that GitHub ignores the .env file as it contains sensitive information that shouldn't be shared.
+In this file you must provide:
+
+STRIPE_SECRET_KEY=
+STRIPE_PUBLIC_KEY=
+
+A stripe key can be obtained by signing up at Stripe Checkout, and a gmail login must also be provided as:
+
+EMAIL=
+PASS=
