@@ -24,7 +24,7 @@ In this file you must provide:
 STRIPE_SECRET_KEY=
 STRIPE_PUBLIC_KEY=
 
-A stripe key can be obtained by signing up at Stripe Checkout, and a gmail login must also be provided as:
+A stripe key can be obtained by signing up at Stripe Checkout, and a gmail login must also be provided in the .env as:
 
 EMAIL=
 PASS=
