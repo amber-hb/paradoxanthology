@@ -2,7 +2,7 @@ Stripe checkout system created with help from: https://www.youtube.com/channel/U
 - Errors shown in console for the checkout are due to there being a more recent version of Stripe available and do not impact performance or functionality
 - Items in the shop page MUST be edited, deleted, and added through the items.json file
 
-#To run on localhost:
+#To run on localhost
 
 Download Node JS
 Open CMD and type: npm install
@@ -17,7 +17,7 @@ Create a database called: nodejs_login
 Import the database.sql file in to the nodejs_login database
 
 
-##To have the shop and contact form working on localhost:
+##To have the shop and contact form working on localhost
 
 You will need to create a .env in the root project folder which contains server.js
 The reason for this is that GitHub ignores the .env file as it contains sensitive information that shouldn't be shared.
