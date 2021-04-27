@@ -7,12 +7,15 @@ Stripe checkout system created with help from: https://www.youtube.com/channel/U
 Download Node JS
 Open CMD and type: 
 > npm install
+
 Then use **cd** to move to the folder container server.js
 In this folder type: npm install
 Then type: 
 > npm install --save express ejs express-validator cookie-session bcrypt mysql2
+
 Then type: 
 > npm install bcryptjs nodemailer
+
 Then in CMD, or a terminal in an editor such as VS Code, type: 
 > node server.js
 
@@ -28,8 +31,10 @@ You will need to create a .env in the root project folder which contains server.
 The reason for this is that GitHub ignores the .env file as it contains sensitive information that shouldn't be shared.
 In this file you must provide:
 > STRIPE_SECRET_KEY=
+
 > STRIPE_PUBLIC_KEY=
 
 A stripe key can be obtained by signing up at Stripe Checkout, and a gmail login must also be provided in the .env as:
 > EMAIL=
+
 > PASS=
