@@ -5,11 +5,10 @@ Stripe checkout system created with help from: https://www.youtube.com/channel/U
 # To run on localhost
 
 Download Node JS
-Open CMD and type: 
+Open CMD and use ***cd*** to move to the folder container ***server.js***
+In this folder type: 
 > npm install
 
-Then use **cd** to move to the folder container server.js
-In this folder type: npm install
 Then type: 
 > npm install --save express ejs express-validator cookie-session bcrypt mysql2
 
@@ -21,13 +20,13 @@ Then in CMD, or a terminal in an editor such as VS Code, type:
 
 Have XAAMP installed and run Apache & MySql
 Open localhost in the browser
-Create a database called: **nodejs_login**
-Import the database.sql file in to the nodejs_login database
+Create a database called: ***nodejs_login***
+Import the ***database.sql*** file in to the ***nodejs_login*** database
 
 
 ## To have the shop and contact form working on localhost
 
-You will need to create a .env in the root project folder which contains server.js
+You will need to create a file called ***.env*** in the root project folder which contains ***server.js***
 The reason for this is that GitHub ignores the .env file as it contains sensitive information that shouldn't be shared.
 In this file you must provide:
 > STRIPE_SECRET_KEY=
